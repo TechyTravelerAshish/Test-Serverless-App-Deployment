@@ -15,7 +15,7 @@ phases:
   build:
     commands:
       - echo Deploying the application to AWS using Serverless Framework...
-      - serverless deploy -v
+      - serverless deploy -v --region ap-south-1 
       - ls -lrt
       #- serverless deploy --debug
   post_build:
