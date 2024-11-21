@@ -1,0 +1,23 @@
+service: my-serverless-app
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+  deploymentBucket: my-serverless-app-deployment-bucket
+
+functions:
+  hello:
+    handler: build/handler.hello
+
+package:
+  exclude:
+    - node_modules/**  # Node.js specific, fine-tune this for your cases
+    - tests/**
+    - src/templates/**
+    - .git/**
+    - .vscode/**
+    - logs/**
+    - doc/**
